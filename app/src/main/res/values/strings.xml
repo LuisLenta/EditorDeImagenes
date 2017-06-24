@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">EditorDeImagenes</string>
+    <string name="empezar_nuevo">Nuevo</string>
+    <string name="pincel">Pincel</string>
+    <string name="borrar">Borrar</string>
+    <string name="guardar">Guardar</string>
+    <string name="pintar">Pintar</string>
+
+    <string name="sml">Small</string>
+    <string name="med">Medium</string>
+    <string name="lrg">Large</string>
+</resources>

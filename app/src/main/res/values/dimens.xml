@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brush sizes -->
+    <dimen name="pincel_pequeño">10dp</dimen>
+    <integer name="tamaño_pequeño">10</integer>
+    <dimen name="pincel_medio">20dp</dimen>
+    <integer name="tamaño_medio">20</integer>
+    <dimen name="pincel_grande">30dp</dimen>
+    <integer name="tamaño_grande">30</integer>
+</resources>
