@@ -25,7 +25,10 @@ public class LienzoView extends View {
 
     private Canvas drawCanvas;
 
+    private Lienzo dibujoCanvas;
+
     private boolean borrar=false;
+
 
 
     public LienzoView(Context context, AttributeSet attrs)
@@ -49,6 +52,8 @@ public class LienzoView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
         imagen = new Imagen(w,h);
         drawCanvas = new Canvas(imagen.getImagen());
+        Canvas aux = new Canvas(imagen.getImagen());
+
     }
 
     @Override
@@ -56,6 +61,7 @@ public class LienzoView extends View {
         //draw view
         canvas.drawBitmap(imagen.getImagen(), 0, 0, pincel.getPincelCanvas());
         canvas.drawPath(pincel.getDibujarCamino(), pincel.getPincel());
+
     }
 
     @Override
@@ -130,6 +136,7 @@ public class LienzoView extends View {
         this.imagen.setImagen(drawable.getBitmap());
     }*/
    public void setImagenLienzo(Bitmap nuevaImagen) {
+
 
        this.imagen.setImagen(nuevaImagen);
 
