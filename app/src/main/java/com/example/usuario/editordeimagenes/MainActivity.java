@@ -108,25 +108,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if (view.getId()==R.id.boton_cargar){
 
-
-            /*final CharSequence[] option = {"Elegir de galeria", "Cancelar"};
-            final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setTitle("Elige una opción");
-            builder.setItems(option, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                   if(option[which] == "Elegir de galeria"){
-                        Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                        intent.setType("image/.png");
-                       intent.setType("image/.jpeg");
-                       startActivityForResult(intent.createChooser(intent, "Selecciona app de imagen"), SELECT_PICTURE);
-                   }else {
-                        dialog.dismiss();
-                    }
-                }
-            });
-
-            builder.show();*/
             botonCargar.clickeado();
         }
     }

@@ -137,9 +137,8 @@ public class LienzoView extends View {
     }*/
    public void setImagenLienzo(Bitmap nuevaImagen) {
 
-
        this.imagen.setImagen(nuevaImagen);
-
+       //drawCanvas.setBitmap(imagen.getImagen());
 
    }
 

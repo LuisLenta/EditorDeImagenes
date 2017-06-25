@@ -9,30 +9,25 @@ import android.graphics.Bitmap;
 public class Imagen {
 
     private Bitmap imagen; // canvasBitmap
+    float w,h;
 
     public Imagen(int w, int h){
-
+        this.w=w;
+        this.h=h;
         imagen = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
 
     }
 
     public void setImagen(Bitmap imagen) {
-        this.imagen = imagen;
+        //this.imagen = imagen;
+        this.imagen=Bitmap.createScaledBitmap(imagen,(int)w, (int) (h),true);
     }
 
     public Bitmap getImagen() {
         return imagen;
     }
 
-    public int getAlto(){
-        return imagen.getHeight();
-    }
-    public int getAncho(){
-        return imagen.getWidth();
-    }
-    public Bitmap.Config getConfiguracionBitmap (){
-        return imagen.getConfig();
-    }
+
 
 
 }
