@@ -32,8 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private PaletaColores paletaColores;
 
-    private ImageButton currPaint, botonDibujar, botonBorrar, botonNuevo, botonGuardar, botonCargar ;
+    private ImageButton currPaint, botonDibujar, botonBorrar, botonGuardar, botonCargar ;
 
+    private Boton botonNuevo;
 
     private float pincelPequeño, pincelMediano, pincelGrande;
 
@@ -65,8 +66,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         botonBorrar.setOnClickListener(this);                        //eraseBtn.setOnClickListener(this);
 
 
-        botonNuevo = (ImageButton)findViewById(R.id.boton_nuevo);
-        botonNuevo.setOnClickListener(this);
+         botonNuevo=new BotonNuevo((ImageButton) findViewById(R.id.boton_nuevo),this);
+        //botonNuevo = (ImageButton)findViewById(R.id.boton_nuevo);
+        //botonNuevo.setOnClickListener(this);
 
         botonGuardar = (ImageButton)findViewById(R.id.boton_guardar); //saveBtn = (ImageButton)findViewById(R.id.save_btn);
         botonGuardar.setOnClickListener(this); //saveBtn.setOnClickListener(this);
@@ -180,7 +182,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         else if(view.getId()==R.id.boton_nuevo){
             //new button
-            AlertDialog.Builder nuevoDialog = new AlertDialog.Builder(this);
+          /*  AlertDialog.Builder nuevoDialog = new AlertDialog.Builder(this);
             nuevoDialog.setTitle("Nueva edición");
             nuevoDialog.setMessage("Empezar nueva edición (esta seguro)?");
             nuevoDialog.setPositiveButton("Aceptar", new DialogInterface.OnClickListener(){
@@ -194,7 +196,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     dialog.cancel();
                 }
             });
-            nuevoDialog.show();
+            nuevoDialog.show();*/
+            botonNuevo.clickeado();
         }
 
 
@@ -288,5 +291,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 lienzoView.setImagenLienzo(bitmap);
             } catch (FileNotFoundException e) {}
         }
+    }
+
+    public LienzoView getLienzoView()
+    {
+        return lienzoView;
     }
 }
