@@ -22,8 +22,8 @@ public class BotonNuevo extends Boton{
     public void clickeado()
     {
         AlertDialog.Builder nuevoDialog = new AlertDialog.Builder(mainActivity);
-        nuevoDialog.setTitle("Nueva ediciÃ³n");
-        nuevoDialog.setMessage("Empezar nueva ediciÃ³n (esta seguro)?");
+        nuevoDialog.setTitle("Nueva edición");
+        nuevoDialog.setMessage("Empezar nueva edición (esta seguro)?");
         nuevoDialog.setPositiveButton("Aceptar", new DialogInterface.OnClickListener(){
             public void onClick(DialogInterface dialog, int which){
                 mainActivity.getLienzoView().empezarNuevo(); //drawView.startNew();

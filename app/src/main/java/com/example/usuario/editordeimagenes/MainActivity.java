@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private PaletaColores paletaColores;
 
-    private ImageButton currPaint, botonDibujar, botonBorrar, botonGuardar, botonCargar ;
+    private ImageButton currPaint, botonDibujar,  botonGuardar, botonCargar ; //botonNuevo, botonBorrar,
 
-    private Boton botonNuevo;
+    private Boton botonNuevo,botonBorrar;
 
     private float pincelPequeño, pincelMediano, pincelGrande;
 
@@ -62,8 +62,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         botonDibujar = (ImageButton)findViewById(R.id.boton_dibujar);
         botonDibujar.setOnClickListener(this);
 
-        botonBorrar = (ImageButton)findViewById(R.id.boton_borrar);  // eraseBtn = (ImageButton)findViewById(R.id.erase_btn);
-        botonBorrar.setOnClickListener(this);                        //eraseBtn.setOnClickListener(this);
+
+        botonBorrar= new BotonBorrar((ImageButton) findViewById(R.id.boton_borrar),this);
+        //botonBorrar = (ImageButton)findViewById(R.id.boton_borrar);  // eraseBtn = (ImageButton)findViewById(R.id.erase_btn);
+        //botonBorrar.setOnClickListener(this);                        //eraseBtn.setOnClickListener(this);
 
 
          botonNuevo=new BotonNuevo((ImageButton) findViewById(R.id.boton_nuevo),this);
@@ -146,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         else if(view.getId()==R.id.boton_borrar){
             //switch to erase - choose size
-            final Dialog pincelDialog = new Dialog(this);
+           /* final Dialog pincelDialog = new Dialog(this);
             pincelDialog.setTitle("Tamaño borrar:");
             pincelDialog.setContentView(R.layout.selector_pincel);
 
@@ -177,7 +179,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     pincelDialog.dismiss();
                 }
             });
-            pincelDialog.show();
+            pincelDialog.show();*/
+            botonBorrar.clickeado();
         }
 
         else if(view.getId()==R.id.boton_nuevo){
@@ -296,5 +299,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public LienzoView getLienzoView()
     {
         return lienzoView;
+    }
+
+    public float setTamañoPincel(int tam)
+    {
+        if(tam==1)
+            return pincelPequeño;
+        else if(tam==2)
+        return pincelMediano;
+    else if(tam==3)
+        return pincelGrande;
+    else
+        return pincelMediano;
     }
 }
