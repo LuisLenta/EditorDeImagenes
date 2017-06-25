@@ -22,17 +22,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-    private LienzoView lienzoView;//DrawingView drawView;
-
+    private LienzoView lienzoView;
     private PaletaColores paletaColores;
-
-    //private ImageButton    botonCargar ; //botonNuevo, botonBorrar,botonDibujar,botonGuardar,
-
     private Boton botonNuevo,botonBorrar, botonDibujar,botonGuardar,botonCargar;
-
     private float pincelPequeño, pincelMediano, pincelGrande;
 
-    private final int SELECT_PICTURE = 300;
+
 
 
     @Override
@@ -43,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lienzoView = (LienzoView)findViewById(R.id.lienzo);
 
         LinearLayout paintLayout = (LinearLayout)findViewById(R.id.paleta_colores);
-        paletaColores = new PaletaColores((ImageButton)paintLayout.getChildAt(0), getResources().getDrawable(R.drawable.paint_pressed));
+        paletaColores = paletaColores.getInstancia((ImageButton) paintLayout.getChildAt(0), getResources().getDrawable(R.drawable.paint_pressed));
         paletaColores.registarObservador(lienzoView.getPincel());
 
 
@@ -58,25 +53,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         botonGuardar=new BotonGuardar((ImageButton)findViewById(R.id.boton_guardar),this);
         botonCargar=new BotonCargar((ImageButton)findViewById(R.id.boton_cargar),this);
 
-        //botonCargar = (ImageButton)findViewById(R.id.boton_cargar);
-        //botonCargar.setOnClickListener(this);
-
         lienzoView.setTamañoPincel(pincelMediano);
     }
 
     public void pintarClicked(View view){
 
         if((view)!= paletaColores.getColorSeleccionado()){
-            //update color
 
             ImageButton imgView = (ImageButton)view;
-            //String color = view.getTag().toString();
-            // lienzoView.setColor(color);
-
             imgView.setImageDrawable(getResources().getDrawable(R.drawable.paint_pressed));
             paletaColores.setSeleccionado(getResources().getDrawable(R.drawable.paint));
-            //currPaint.setImageDrawable(getResources().getDrawable(R.drawable.paint));
-            //currPaint=(ImageButton)view;
             paletaColores.setColorSeleccionado((ImageButton)view);
             paletaColores.cambiarColorPincel();
         }
@@ -84,21 +70,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-            @Override
-            public void onClick(View view){
-        //respond to clicks
+    @Override
+    public void onClick(View view){
+
         if(view.getId()==R.id.boton_dibujar){
             botonDibujar.clickeado();
         }
         else if(view.getId()==R.id.boton_borrar){
             botonBorrar.clickeado();
         }
-
         else if(view.getId()==R.id.boton_nuevo){
             botonNuevo.clickeado();
         }
-
-
         else if(view.getId()==R.id.boton_guardar){
             botonGuardar.clickeado();
         }
@@ -107,22 +90,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             botonCargar.clickeado();
         }
     }
-
-   /* @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(resultCode == RESULT_OK){
-            Uri path = data.getData();
-
-
-            this.imagenGaleria.setImageURI(path);
-
-            BitmapDrawable drawable = (BitmapDrawable) imagenGaleria.getDrawable();
-
-            this.lienzoView.setImagenLienzo(drawable);
-        }
-    }*/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

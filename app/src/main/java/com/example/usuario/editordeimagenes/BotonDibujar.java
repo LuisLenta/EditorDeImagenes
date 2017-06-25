@@ -20,7 +20,7 @@ public class BotonDibujar extends Boton {
     public void clickeado()
     {
         final Dialog pincelDialog = new Dialog(mainActivity);
-        pincelDialog.setTitle("TamaÃ±o borrar:");
+        pincelDialog.setTitle("Tamaño pincel:");
         pincelDialog.setContentView(R.layout.selector_pincel);
 
         ImageButton smallBtn = (ImageButton)pincelDialog.findViewById(R.id.pincel_pequeño);
@@ -28,7 +28,7 @@ public class BotonDibujar extends Boton {
             @Override
             public void onClick(View v) {
                 mainActivity.getLienzoView().setBorrar(true);  //drawView.setErase(true);
-                mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(1)); //drawView.setBrushSize(smallBrush);
+                mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(1));
                 pincelDialog.dismiss();
             }
         });
@@ -37,7 +37,9 @@ public class BotonDibujar extends Boton {
             @Override
             public void onClick(View v) {
                 mainActivity.getLienzoView().setBorrar(true); //drawView.setErase(true);
-                mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(2)); //drawView.setBrushSize(mediumBrush);
+                mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(2));
+
+
                 pincelDialog.dismiss();
             }
         });

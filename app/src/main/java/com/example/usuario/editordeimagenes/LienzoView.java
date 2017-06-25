@@ -25,7 +25,7 @@ public class LienzoView extends View {
 
     private Canvas drawCanvas;
 
-    private Lienzo dibujoCanvas;
+
 
     private boolean borrar=false;
 
@@ -50,7 +50,7 @@ public class LienzoView extends View {
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        //view given size
+
         super.onSizeChanged(w, h, oldw, oldh);
 
         this.w=w;
@@ -63,7 +63,7 @@ public class LienzoView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        //draw view
+
         canvas.drawBitmap(imagen.getImagen(), 0, 0, pincel.getPincelCanvas());
         canvas.drawPath(pincel.getDibujarCamino(), pincel.getPincel());
 
@@ -71,7 +71,7 @@ public class LienzoView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        //detect user touch
+
         float touchX = event.getX();
         float touchY = event.getY();
 
@@ -94,35 +94,26 @@ public class LienzoView extends View {
     }
 
     public void setColor(String newColor){
-        //set color
+
         invalidate();
         pincel.setPincelColor(Color.parseColor(newColor));
 
     }
 
     public void setTamañoPincel(float nuevoTamaño){
-        //update size
+
         float pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 nuevoTamaño, getResources().getDisplayMetrics());
         pincel.setTamañoPincel(pixelAmount);
 
-        //brushSize=pixelAmount;
-        //drawPaint.setStrokeWidth(brushSize);
-    }
 
-    public void setUltimoTamañoPincel(float ultimoTamaño){
-        setUltimoTamañoPincel(ultimoTamaño);
     }
-    public float getUltimoTamañoPincel(){
-        return pincel.getUltimoTamañoPincel();
-    }
-
     public void setBorrar(boolean isBorrar){
-        //set erase true or false
+
         borrar = isBorrar;
-        if(borrar) pincel.setPincelColor(Color.WHITE); //drawPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        if(borrar) pincel.setPincelColor(Color.WHITE);
         else pincel.setPincelColor(Color.RED);
-        // drawPaint.setXfermode(null);
+
     }
 
     public void empezarNuevo(){
@@ -135,17 +126,12 @@ public class LienzoView extends View {
         return pincel;
     }
 
-   /* public void setImagenLienzo(ImageView imagen) {
-
-        BitmapDrawable drawable = (BitmapDrawable) imagen.getDrawable();
-        this.imagen.setImagen(drawable.getBitmap());
-    }*/
    public void setImagenLienzo(Bitmap nuevaImagen) {
 
        this.imagen=new Imagen(w,h);
        this.imagen.setImagen(nuevaImagen);
        drawCanvas.setBitmap(imagen.getImagen());
-       //drawCanvas.setBitmap(imagen.getImagen());
+
 
    }
 

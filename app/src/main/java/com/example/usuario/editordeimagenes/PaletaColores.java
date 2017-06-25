@@ -15,15 +15,30 @@ import java.util.ArrayList;
 
 public class PaletaColores  implements Subject {
 
+
+    private static PaletaColores paleta;
     private ImageButton colorSeleccionado;
     private ArrayList<Observador> observadores;
 
-    public PaletaColores(ImageButton colorSeleccionado,Drawable drawable){
+    private PaletaColores(ImageButton colorSeleccionado,Drawable drawable){
 
         this.colorSeleccionado = colorSeleccionado;
         colorSeleccionado.setImageDrawable(drawable);
         observadores = new ArrayList<Observador>();
     }
+    public static synchronized PaletaColores getInstancia(ImageButton colorSeleccionado,Drawable drawable)
+    {
+        if(paleta==null)
+        {
+            paleta= new PaletaColores(colorSeleccionado,drawable);
+            return paleta;
+        }
+        else
+        {
+            return paleta;
+        }
+    }
+
 
     public void setColorSeleccionado(ImageButton colorSeleccionado) {
         this.colorSeleccionado = colorSeleccionado;
