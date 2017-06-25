@@ -1,15 +1,19 @@
 package com.example.usuario.editordeimagenes;
 
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.util.TypedValue;
+
+import java.util.Observer;
+
 /**
  * Created by USUARIO on 24/06/2017.
  */
 
-public class Pincel {
+public class Pincel implements  Observador {
 
     private Path dibujarCamino; //drawPath
 
@@ -35,6 +39,10 @@ public class Pincel {
 
     }
 
+    public void update(String nuevoColor){
+                this.pincel.setColor(Color.parseColor(nuevoColor));
+    }
+
     public void setDibujarCamino(Path dibujarCamino) {
         this.dibujarCamino = dibujarCamino;
     }
@@ -53,7 +61,7 @@ public class Pincel {
 
     public void setTamañoPincel(float tamañoPincel) {
         this.tamañoPincel=tamañoPincel;
-        pincel.setStrokeWidth(tamañoPincel);
+        this.pincel.setStrokeWidth(tamañoPincel);
     }
 
     public void setUltimoTamañoPincel(float ultimoTamañoPincel) {

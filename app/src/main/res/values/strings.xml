@@ -2,6 +2,7 @@
 
     <string name="app_name">EditorDeImagenes</string>
     <string name="empezar_nuevo">Nuevo</string>
+    <string name="cargar">Cargar</string>
     <string name="pincel">Pincel</string>
     <string name="borrar">Borrar</string>
     <string name="guardar">Guardar</string>

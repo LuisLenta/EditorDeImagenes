@@ -1,13 +1,17 @@
 package com.example.usuario.editordeimagenes;
 
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 import android.view.View;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
+import android.widget.ImageView;
 
 /**
  * Created by USUARIO on 24/06/2017.
@@ -111,8 +115,26 @@ public class LienzoView extends View {
     }
 
     public void empezarNuevo(){
+
         drawCanvas.drawColor(0, PorterDuff.Mode.CLEAR);
         invalidate();
     }
+
+    public Pincel getPincel() {
+        return pincel;
+    }
+
+   /* public void setImagenLienzo(ImageView imagen) {
+
+        BitmapDrawable drawable = (BitmapDrawable) imagen.getDrawable();
+        this.imagen.setImagen(drawable.getBitmap());
+    }*/
+   public void setImagenLienzo(Bitmap nuevaImagen) {
+
+       this.imagen.setImagen(nuevaImagen);
+
+
+   }
+
 
 }

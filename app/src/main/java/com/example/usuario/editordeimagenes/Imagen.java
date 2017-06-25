@@ -23,4 +23,16 @@ public class Imagen {
     public Bitmap getImagen() {
         return imagen;
     }
+
+    public int getAlto(){
+        return imagen.getHeight();
+    }
+    public int getAncho(){
+        return imagen.getWidth();
+    }
+    public Bitmap.Config getConfiguracionBitmap (){
+        return imagen.getConfig();
+    }
+
+
 }
