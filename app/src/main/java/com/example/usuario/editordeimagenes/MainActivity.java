@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private PaletaColores paletaColores;
 
-    private ImageButton currPaint, botonDibujar,  botonGuardar, botonCargar ; //botonNuevo, botonBorrar,
+    private ImageButton     botonCargar ; //botonNuevo, botonBorrar,botonDibujar,botonGuardar,
 
-    private Boton botonNuevo,botonBorrar;
+    private Boton botonNuevo,botonBorrar, botonDibujar,botonGuardar;
 
     private float pincelPequeño, pincelMediano, pincelGrande;
 
@@ -52,15 +52,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         paletaColores = new PaletaColores((ImageButton)paintLayout.getChildAt(0), getResources().getDrawable(R.drawable.paint_pressed));
         paletaColores.registarObservador(lienzoView.getPincel());
 
-        //currPaint = (ImageButton)paintLayout.getChildAt(0);
-        //currPaint.setImageDrawable(getResources().getDrawable(R.drawable.paint_pressed));
 
         pincelPequeño = getResources().getInteger(R.integer.tamaño_pequeño);
         pincelMediano = getResources().getInteger(R.integer.tamaño_medio);
         pincelGrande = getResources().getInteger(R.integer.tamaño_grande);
 
-        botonDibujar = (ImageButton)findViewById(R.id.boton_dibujar);
-        botonDibujar.setOnClickListener(this);
+         botonDibujar=new BotonDibujar((ImageButton) findViewById(R.id.boton_dibujar),this);
+        //botonDibujar = (ImageButton)findViewById(R.id.boton_dibujar);
+        //botonDibujar.setOnClickListener(this);
 
 
         botonBorrar= new BotonBorrar((ImageButton) findViewById(R.id.boton_borrar),this);
@@ -72,8 +71,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //botonNuevo = (ImageButton)findViewById(R.id.boton_nuevo);
         //botonNuevo.setOnClickListener(this);
 
-        botonGuardar = (ImageButton)findViewById(R.id.boton_guardar); //saveBtn = (ImageButton)findViewById(R.id.save_btn);
-        botonGuardar.setOnClickListener(this); //saveBtn.setOnClickListener(this);
+        botonGuardar=new BotonGuardar((ImageButton)findViewById(R.id.boton_guardar),this);
+        //botonGuardar = (ImageButton)findViewById(R.id.boton_guardar); //saveBtn = (ImageButton)findViewById(R.id.save_btn);
+        //botonGuardar.setOnClickListener(this); //saveBtn.setOnClickListener(this);
 
         botonCargar = (ImageButton)findViewById(R.id.boton_cargar);
         botonCargar.setOnClickListener(this);
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //respond to clicks
         if(view.getId()==R.id.boton_dibujar){
             //draw button clicked
-            final Dialog pincelDialog = new Dialog(this);
+           /* final Dialog pincelDialog = new Dialog(this);
             pincelDialog.setTitle("Tamaño de pincel:");
             pincelDialog.setContentView(R.layout.selector_pincel);
 
@@ -143,7 +143,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     pincelDialog.dismiss();
                 }
             });
-            pincelDialog.show();
+            pincelDialog.show();*/
+            botonDibujar.clickeado();
         }
 
         else if(view.getId()==R.id.boton_borrar){
@@ -206,7 +207,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         else if(view.getId()==R.id.boton_guardar){
             //save drawing
-            AlertDialog.Builder guardarDialog = new AlertDialog.Builder(this);
+            /*AlertDialog.Builder guardarDialog = new AlertDialog.Builder(this);
             guardarDialog.setTitle("Guardar ediciones");
             guardarDialog.setMessage("Guardar en la Gallery?");
             guardarDialog.setPositiveButton("Aceptar", new DialogInterface.OnClickListener(){
@@ -236,7 +237,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     dialog.cancel();
                 }
             });
-            guardarDialog.show();
+            guardarDialog.show();*/
+            botonGuardar.clickeado();
         }
         else if (view.getId()==R.id.boton_cargar){
 
