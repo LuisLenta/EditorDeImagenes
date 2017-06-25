@@ -29,6 +29,8 @@ public class LienzoView extends View {
 
     private boolean borrar=false;
 
+    int w;
+    int h;
 
 
     public LienzoView(Context context, AttributeSet attrs)
@@ -50,6 +52,9 @@ public class LienzoView extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         //view given size
         super.onSizeChanged(w, h, oldw, oldh);
+
+        this.w=w;
+        this.h=h;
         imagen = new Imagen(w,h);
         drawCanvas = new Canvas(imagen.getImagen());
         Canvas aux = new Canvas(imagen.getImagen());
@@ -137,7 +142,9 @@ public class LienzoView extends View {
     }*/
    public void setImagenLienzo(Bitmap nuevaImagen) {
 
+       this.imagen=new Imagen(w,h);
        this.imagen.setImagen(nuevaImagen);
+       drawCanvas.setBitmap(imagen.getImagen());
        //drawCanvas.setBitmap(imagen.getImagen());
 
    }

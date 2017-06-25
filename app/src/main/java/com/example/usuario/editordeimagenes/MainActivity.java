@@ -17,14 +17,10 @@ import java.io.BufferedInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-import android.app.AlertDialog;
-
-import android.content.DialogInterface;
-
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private ImageView imagenGaleria;
+
 
     private LienzoView lienzoView;//DrawingView drawView;
 

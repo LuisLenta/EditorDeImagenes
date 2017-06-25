@@ -25,7 +25,7 @@ public class BotonCargar extends Boton {
     {
         final CharSequence[] option = {"Elegir de galeria", "Cancelar"};
         final AlertDialog.Builder builder = new AlertDialog.Builder(mainActivity);
-        builder.setTitle("Elige una opciÃ³n");
+        builder.setTitle("Elige una opción");
         builder.setItems(option, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
