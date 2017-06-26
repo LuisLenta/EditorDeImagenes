@@ -21,7 +21,7 @@ public class BotonCargar extends Boton {
 
 
     @Override
-    void clickeado()
+     void clickeado()
     {
         final CharSequence[] option = {"Elegir de galeria", "Cancelar"};
         final AlertDialog.Builder builder = new AlertDialog.Builder(mainActivity);

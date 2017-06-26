@@ -8,8 +8,8 @@ import android.widget.ImageButton;
 
 public abstract class Boton {
 
-        MainActivity mainActivity;
-        ImageButton imgButton;
+        protected MainActivity mainActivity;
+        protected ImageButton imgButton;
 
         public Boton(ImageButton id, MainActivity mainActivity)
         {
