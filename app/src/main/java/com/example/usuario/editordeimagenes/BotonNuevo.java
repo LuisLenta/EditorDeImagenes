@@ -23,10 +23,10 @@ public class BotonNuevo extends Boton{
     {
         AlertDialog.Builder nuevoDialog = new AlertDialog.Builder(mainActivity);
         nuevoDialog.setTitle("Nueva edición");
-        nuevoDialog.setMessage("Empezar nueva edición (esta seguro)?");
+        nuevoDialog.setMessage("Esta seguro que desea empezar una nueva edición?");
         nuevoDialog.setPositiveButton("Aceptar", new DialogInterface.OnClickListener(){
             public void onClick(DialogInterface dialog, int which){
-                mainActivity.getLienzoView().empezarNuevo(); //drawView.startNew();
+                mainActivity.getLienzoView().empezarNuevo();
                 dialog.dismiss();
             }
         });

@@ -3,15 +3,13 @@ package com.example.usuario.editordeimagenes;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 import android.view.View;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
-import android.widget.ImageView;
+
 
 /**
  * Created by USUARIO on 24/06/2017.
@@ -57,7 +55,7 @@ public class LienzoView extends View {
         this.h=h;
         imagen = new Imagen(w,h);
         drawCanvas = new Canvas(imagen.getImagen());
-        Canvas aux = new Canvas(imagen.getImagen());
+
 
     }
 

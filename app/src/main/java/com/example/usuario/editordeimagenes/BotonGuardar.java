@@ -23,30 +23,30 @@ public class BotonGuardar extends Boton {
     @Override
     public void clickeado()
     {
-        //save drawing
+
         AlertDialog.Builder guardarDialog = new AlertDialog.Builder(mainActivity);
         guardarDialog.setTitle("Guardar ediciones");
-        guardarDialog.setMessage("Guardar en la Gallery?");
+        guardarDialog.setMessage("Desea guardar en la Galeria?");
         guardarDialog.setPositiveButton("Aceptar", new DialogInterface.OnClickListener(){
             public void onClick(DialogInterface dialog, int which){
-                //save drawing
-                mainActivity.getLienzoView().setDrawingCacheEnabled(true);  //drawView.setDrawingCacheEnabled(true);
+
+                mainActivity.getLienzoView().setDrawingCacheEnabled(true);
                 String imgSaved = MediaStore.Images.Media.insertImage(
                         mainActivity.getContentResolver(), mainActivity.getLienzoView().getDrawingCache(),
                         UUID.randomUUID().toString()+".png", "drawing");
 
                 if(imgSaved!=null){
                     Toast savedToast = Toast.makeText(mainActivity.getApplicationContext(),
-                            "Drawing saved to Gallery!", Toast.LENGTH_SHORT);
+                            "La imagen se ha guardado con exito!", Toast.LENGTH_SHORT);
                     savedToast.show();
                 }
                 else{
                     Toast unsavedToast = Toast.makeText(mainActivity.getApplicationContext(),
-                            "Oops! Image could not be saved.", Toast.LENGTH_SHORT);
+                            "Opps! La imagen no se guardo!", Toast.LENGTH_SHORT);
                     unsavedToast.show();
                 }
 
-                mainActivity.getLienzoView().destroyDrawingCache(); //drawView.destroyDrawingCache();
+                mainActivity.getLienzoView().destroyDrawingCache();
             }
         });
         guardarDialog.setNegativeButton("Cancelar", new DialogInterface.OnClickListener(){

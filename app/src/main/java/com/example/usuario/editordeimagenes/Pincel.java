@@ -3,11 +3,7 @@ package com.example.usuario.editordeimagenes;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.util.TypedValue;
 
-import java.util.Observer;
 
 /**
  * Created by USUARIO on 24/06/2017.
@@ -15,12 +11,12 @@ import java.util.Observer;
 
 public class Pincel implements  Observador {
 
-    private Path dibujarCamino; //drawPath
+    private Path dibujarCamino;
 
-    private Paint pincel, pincelCanvas; //drawPaint, canvasPaint;
-    private int pincelColor = 0xFF660000; //paintColor
+    private Paint pincel, pincelCanvas;
+    private int pincelColor = 0xFF660000;
 
-    private float tamañoPincel =20,ultimoTamañoPincel; //brushSize, lastBrushSize
+    private float tamañoPincel =20,ultimoTamañoPincel;
 
     public Pincel(){
 

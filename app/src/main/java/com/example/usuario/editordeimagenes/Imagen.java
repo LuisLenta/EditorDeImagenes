@@ -8,7 +8,7 @@ import android.graphics.Bitmap;
 
 public class Imagen {
 
-    private Bitmap imagen; // canvasBitmap
+    private Bitmap imagen;
     float w,h;
 
     public Imagen(int w, int h){
@@ -19,7 +19,7 @@ public class Imagen {
     }
 
     public void setImagen(Bitmap imagen) {
-        //this.imagen = imagen;
+
         this.imagen=Bitmap.createScaledBitmap(imagen,(int)w, (int) (h),true);
     }
 

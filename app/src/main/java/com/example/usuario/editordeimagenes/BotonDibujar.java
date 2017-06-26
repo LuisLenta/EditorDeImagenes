@@ -20,14 +20,14 @@ public class BotonDibujar extends Boton {
     public void clickeado()
     {
         final Dialog pincelDialog = new Dialog(mainActivity);
-        pincelDialog.setTitle("Tamaño pincel:");
+        pincelDialog.setTitle("Elija el tamaño del pincel:");
         pincelDialog.setContentView(R.layout.selector_pincel);
 
         ImageButton smallBtn = (ImageButton)pincelDialog.findViewById(R.id.pincel_pequeño);
         smallBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                mainActivity.getLienzoView().setBorrar(true);  //drawView.setErase(true);
+                mainActivity.getLienzoView().setBorrar(true);
                 mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(1));
                 pincelDialog.dismiss();
             }
@@ -36,7 +36,7 @@ public class BotonDibujar extends Boton {
         mediumBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                mainActivity.getLienzoView().setBorrar(true); //drawView.setErase(true);
+                mainActivity.getLienzoView().setBorrar(true);
                 mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(2));
 
 
@@ -47,8 +47,8 @@ public class BotonDibujar extends Boton {
         largeBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                mainActivity.getLienzoView().setBorrar(true); //drawView.setErase(true);
-                mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(3)); //drawView.setBrushSize(largeBrush);
+                mainActivity.getLienzoView().setBorrar(true);
+                mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(3));
                 pincelDialog.dismiss();
             }
         });

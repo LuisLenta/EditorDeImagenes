@@ -29,8 +29,8 @@ public class BotonBorrar extends Boton {
         smallBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                mainActivity.getLienzoView().setBorrar(true);  //drawView.setErase(true);
-                mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(1)); //drawView.setBrushSize(smallBrush);
+                mainActivity.getLienzoView().setBorrar(true);
+                mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(1));
                 pincelDialog.dismiss();
             }
         });
@@ -38,8 +38,8 @@ public class BotonBorrar extends Boton {
         mediumBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                mainActivity.getLienzoView().setBorrar(true); //drawView.setErase(true);
-                mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(2)); //drawView.setBrushSize(mediumBrush);
+                mainActivity.getLienzoView().setBorrar(true);
+                mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(2));
                 pincelDialog.dismiss();
             }
         });
@@ -47,8 +47,8 @@ public class BotonBorrar extends Boton {
         largeBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                mainActivity.getLienzoView().setBorrar(true); //drawView.setErase(true);
-                mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(3)); //drawView.setBrushSize(largeBrush);
+                mainActivity.getLienzoView().setBorrar(true);
+                mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(3));
                 pincelDialog.dismiss();
             }
         });
