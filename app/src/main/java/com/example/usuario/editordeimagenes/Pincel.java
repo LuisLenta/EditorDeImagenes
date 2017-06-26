@@ -14,7 +14,7 @@ public class Pincel implements  Observador {
     private Path dibujarCamino;
 
     private Paint pincel, pincelCanvas;
-    private int pincelColor = 0xFF660000;
+    private int pincelColor = Color.WHITE;
 
     private float tamañoPincel =20,ultimoTamañoPincel;
 

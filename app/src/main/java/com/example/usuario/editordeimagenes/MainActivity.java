@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         botonGuardar=new BotonGuardar((ImageButton)findViewById(R.id.boton_guardar),this);
         botonCargar=new BotonCargar((ImageButton)findViewById(R.id.boton_cargar),this);
 
-        lienzoView.setTamañoPincel(pincelMediano);
+        //lienzoView.setTamañoPincel(pincelMediano);
     }
 
     public void pintarClicked(View view){

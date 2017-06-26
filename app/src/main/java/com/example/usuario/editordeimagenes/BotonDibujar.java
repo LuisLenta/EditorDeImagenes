@@ -27,7 +27,7 @@ public class BotonDibujar extends Boton {
         smallBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                mainActivity.getLienzoView().setBorrar(true);
+                mainActivity.getLienzoView().setBorrar(false);
                 mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(1));
                 pincelDialog.dismiss();
             }
@@ -36,7 +36,7 @@ public class BotonDibujar extends Boton {
         mediumBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                mainActivity.getLienzoView().setBorrar(true);
+                mainActivity.getLienzoView().setBorrar(false);
                 mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(2));
 
 
@@ -47,7 +47,7 @@ public class BotonDibujar extends Boton {
         largeBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                mainActivity.getLienzoView().setBorrar(true);
+                mainActivity.getLienzoView().setBorrar(false);
                 mainActivity.getLienzoView().setTamañoPincel(mainActivity.setTamañoPincel(3));
                 pincelDialog.dismiss();
             }
